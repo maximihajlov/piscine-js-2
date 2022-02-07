@@ -1,4 +1,4 @@
-// const is = {}
+const is = {}
 is.num = function (value) {
     return (typeof value === "number")
 }
@@ -35,9 +35,9 @@ is.fun = function (value) {
 }
 
 is.truthy = function (value) {
-    return value && true
+    return !!value
 }
 
 is.falsy = function (value) {
-    return value && true
+    return !!!value
 }
