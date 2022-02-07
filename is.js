@@ -4,7 +4,7 @@ is.num = function (value) {
 }
 
 is.nan = function (value) {
-    return isNaN(Number(value))
+    return typeof value != "number"
 }
 
 is.str = function (value) {
