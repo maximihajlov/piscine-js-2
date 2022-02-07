@@ -11,5 +11,3 @@ function dogYears(planetName, ageSeconds) {
     }
     return Number((ageSeconds / (planets[planetName] * 31557600) * 7).toFixed(2))
 }
-
-console.log(dogYears("earth",1000000000))
