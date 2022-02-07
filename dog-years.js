@@ -9,5 +9,5 @@ function dogYears(planetName, ageSeconds) {
         uranus: 84.016846,
         neptune: 164.79132,
     }
-    return ageSeconds / (planets[planetName] * 31557600) * 7
+    return (ageSeconds / (planets[planetName] * 31557600) * 7).toFixed(2)
 }
