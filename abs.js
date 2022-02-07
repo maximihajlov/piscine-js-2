@@ -3,6 +3,6 @@ function isPositive(num) {
 }
 
 function abs(num) {
-    if (isPositive(num)) return num
+    if (isPositive(num) || num === 0) return num
     return -num
 }
