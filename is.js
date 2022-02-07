@@ -1,10 +1,10 @@
-// const is = {}
+const is = {}
 is.num = function (value) {
     return typeof value === "number"
 }
 
 is.nan = function (value) {
-    return typeof value != "number"
+    return this.num(value) && isNaN(value)
 }
 
 is.str = function (value) {
