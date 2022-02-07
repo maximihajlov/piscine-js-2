@@ -36,9 +36,9 @@ is.fun = function (value) {
 }
 
 is.truthy = function (value) {
-    return Boolean(value)
+    return true && value
 }
 
 is.falsy = function (value) {
-    return Boolean(value)
+    return true && value
 }
