@@ -7,5 +7,5 @@ function last(arg) {
 }
 
 function kiss(arg) {
-    return [first(arg), last(arg)]
+    return [last(arg), first(arg)]
 }
