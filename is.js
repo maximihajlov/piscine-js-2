@@ -1,4 +1,4 @@
-// const is = {}
+const is = {}
 is.num = function (value) {
     return (typeof value === "number")
 }
@@ -27,7 +27,7 @@ is.arr = function (value) {
 }
 
 is.obj = function (value) {
-    return typeof value === "object"
+    return (typeof value === "object") && !is.arr(value) && value != null
 }
 
 is.fun = function (value) {
@@ -41,3 +41,5 @@ is.truthy = function (value) {
 is.falsy = function (value) {
     return value
 }
+
+console.log(is.obj(Object.create(null)))
