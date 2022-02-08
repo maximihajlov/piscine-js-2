@@ -19,6 +19,6 @@ function keepLast(str) {
 }
 
 function keepFirstLast(str) {
-    return keepFirst(str) + keepLast(str)
+    if (str.length < 4) return str
+    return keepFirst(str)+keepLast(str)
 }
-
