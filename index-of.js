@@ -1,6 +1,6 @@
 function indexOf(arr, el, index = 0) {
     for (let i = index; i < arr.length; i++) {
-        if (arr[i] === el) return i
+        if (arr[i] === el) return i - index
     }
     return -1
 }
@@ -8,7 +8,7 @@ function indexOf(arr, el, index = 0) {
 function lastIndexOf(arr, el, index = 0) {
     let result = -1
     for (let i = index; i < arr.length; i++) {
-        if (arr[i] === el) result = i
+        if (arr[i] === el) result = i - index
     }
     return result
 }
