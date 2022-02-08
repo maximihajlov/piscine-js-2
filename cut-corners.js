@@ -8,12 +8,12 @@ function round(num) {
 }
 
 function ceil(num) {
-    if (num > 0) return trunc(num) + 1
+    if (num > 0 && num !== trunc(num)) return trunc(num) + 1
     else return trunc(num)
 }
 
 function floor(num) {
-    if (num > 0) return trunc(num)
+    if (num > 0 || num === trunc(num)) return trunc(num)
     else return trunc(num) - 1
 }
 
