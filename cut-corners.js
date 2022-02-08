@@ -18,5 +18,8 @@ function floor(num) {
 }
 
 function trunc(num) {
-    return num.toFixed()
+    num = +num
+    return (num - num % 1) || (!isFinite(num) || num === 0 ? num : num < 0 ? -0 : 0);
 }
+
+console.log(trunc(0xfffffffff))
