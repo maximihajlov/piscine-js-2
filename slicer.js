@@ -1,11 +1,20 @@
-function slice(arr, from = 0, to = arr.length) {
-    let result = []
-    if (from < 0) from += arr.length
-    if (to < 0) to += arr.length
+function slice(thing, from = 0, to = thing.length) {
+    if (from < 0) from += thing.length
+    if (to < 0) to += thing.length
 
-    for (let i = from; i < to && i < arr.length; i++) {
-        result.push(arr[i])
+    if (typeof thing === "string") {
+        let result = ""
+        for (let i = from; i < to && i < thing.length; i++) {
+            result += thing[i]
+        }
+        return result
     }
-    return result
+    if (Array.isArray(thing)) {
+        let result = []
+        for (let i = from; i < to && i < thing.length; i++) {
+            result.push(thing[i])
+        }
+        return result
+    }
 }
 
