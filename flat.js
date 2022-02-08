@@ -10,3 +10,4 @@ function flat(array, depth = 1) {
 
     return result;
 }
+
