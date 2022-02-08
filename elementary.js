@@ -3,7 +3,9 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return Math.floor(eval(a + String.fromCharCode(47) + b))
+    let res = eval(a + String.fromCharCode(47) + b)
+    if (res > 0) return Math.floor(res)
+    return Math.ceil(res)
 }
 
 function modulo(a, b) {
