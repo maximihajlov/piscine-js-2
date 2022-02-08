@@ -3,7 +3,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return eval(a + String.fromCharCode(47) + b)
+    return Math.floor(eval(a + String.fromCharCode(47) + b))
 }
 
 function modulo(a, b) {
