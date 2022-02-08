@@ -18,5 +18,5 @@ function floor(num) {
 }
 
 function trunc(num) {
-    return num | 0
+    return num.toFixed()
 }
