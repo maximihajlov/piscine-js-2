@@ -1,6 +1,3 @@
-const add4 = '+4'
-const mul2 = '*2'
-
 function findExpression(to) {
     for (let i = 0; ; i++) {
         let seq = convertToBinary(i)
@@ -10,11 +7,11 @@ function findExpression(to) {
         // to / 4 > log_2(to) if to > 16, so max len can be set to 16/4 = 4
 
         if (seq.length > Math.max(to / 4, 4)) return undefined
+
         seq = seq.split('0').join(add4 + ' ')
         seq = seq.split('1').join(mul2 + ' ')
-        seq = `1 ${seq}`.trimRight()
 
-        if (count(seq) === to) return seq
+        if (count(seq) === to) return `1 ${seq}`.trimRight()
     }
 }
 
@@ -24,11 +21,11 @@ function convertToBinary(num) {
 }
 
 function count(exp) {
-    return exp.slice(2)
-        .split(' ')
-        .reduce((total, op) => {
-            if (op === '+4') return total + 4
-            if (op === '*2') return total * 2
-        }, 1)
+    let expArr = exp.split(' ')
+    let num = 1
+    for (const op in expArr) {
+        if (expArr[op] === "*2") num *= 2
+        if (expArr[op] === "+4") num += 4
+    }
+    return num
 }
-
