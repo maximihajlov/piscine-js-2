@@ -1,11 +1,11 @@
 function multiply(a, b) {
-    return a * b
+    return eval(a + String.fromCharCode(42) + b)
 }
 
 function divide(a, b) {
-    return a / b
+    return eval(a + String.fromCharCode(47) + b)
 }
 
 function modulo(a, b) {
-    return a % b
+    return eval(a + String.fromCharCode(37) + b)
 }
