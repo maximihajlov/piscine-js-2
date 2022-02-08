@@ -1,6 +1,6 @@
 function indexOf(arr, el, index = 0) {
     for (let i = index; i < arr.length; i++) {
-        if (arr[i] === el) return i - index
+        if (arr[i] === el) return i
     }
     return -1
 }
