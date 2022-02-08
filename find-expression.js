@@ -1,5 +1,4 @@
-function findExpression(from, to) {
-
+function findExpression(to) {
     for (let i = 0; ; i++) {
         let seq = convertToBinary(i)
 
@@ -9,7 +8,7 @@ function findExpression(from, to) {
 
         if (seq.length > Math.max(to / 4, 4)) return undefined
         seq = seq.replaceAll('0', add4 + ' ').replaceAll('1', mul2 + ' ').trimRight() //trimRight removes space at the end
-        if (eval(from + seq) === to) return `${from} ${seq}`
+        if (eval(1 + seq) === to) return `1 ${seq}`
     }
 }
 
@@ -17,3 +16,4 @@ function convertToBinary(num) {
     if (num > 0) return convertToBinary(parseInt(String(num / 2))) + (num % 2)
     return ''
 }
+
