@@ -12,6 +12,10 @@ function findExpression(to) {
     }
 }
 
+String.prototype.replaceAll = function replaceAll(search, replace) {
+    return this.split(search).join(replace);
+}
+
 function convertToBinary(num) {
     if (num > 0) return convertToBinary(parseInt(String(num / 2))) + (num % 2)
     return ''
