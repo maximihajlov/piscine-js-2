@@ -6,7 +6,7 @@ function sums(num) {
 
     let result = [part.slice()]
 
-    while (part[0] !== num) {
+    while (part.length > 1) {
         let min = Math.min(...part.slice(0, -1))
         for (let i = 0; i < part.length - 1; i++) {
             if (part[i] === min) {
@@ -18,5 +18,7 @@ function sums(num) {
         }
     }
 
-    return result.slice(0, -1)
+    return result.slice(0, -1) //last element is always [num]
 }
+
+console.log(sums(3))
