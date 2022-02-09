@@ -13,12 +13,10 @@ function sums(num) {
                 part[i]++
                 part[part.length - 1]--
                 if (part[part.length - 1] === 0) part.pop()
-                result.push(part.slice())
+                result.push(part.slice().reverse())
             }
         }
     }
 
     return result.slice(0, -1) //last element is always [num]
 }
-
-console.log(sums(3))
