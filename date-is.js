@@ -1,5 +1,5 @@
 function isValid(date) {
-    if (Object.prototype.toString.call(date) !== "[object Date]") return false
+    if (!(Object.prototype.toString.call(date) === "[object Date]" || Object.prototype.toString.call(date) === "[object Number]")) return false
     return !isNaN(date);
 }
 
