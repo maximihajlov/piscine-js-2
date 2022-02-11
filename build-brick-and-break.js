@@ -27,6 +27,6 @@ export const repair = function () {
 }
 
 export const destroy = function () {
-    let lastBlock = Array.from(document.body.getElementsByTagName('div'))[0]
+    let lastBlock = Array.from(document.body.getElementsByTagName('div')).reverse()[0]
     if (lastBlock) lastBlock.remove()
 }
