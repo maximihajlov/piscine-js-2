@@ -22,12 +22,12 @@ export const pimp = () => {
     let button = document.getElementsByClassName('button')[0]
     if (button.classList.contains('unpimp')) {
         let lastClass = button.classList[button.classList.length - 2]
-        if (lastClass !== 'button') {
-            button.classList.remove(lastClass)
-        } else {
+        button.classList.remove(lastClass)
+        if (lastClass === 'one') {
             button.classList.remove('unpimp')
             styles = stylesBackup.slice()
         }
+
     } else {
         let nextClass = styles.pop()
         if (nextClass) {
