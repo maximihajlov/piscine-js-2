@@ -31,6 +31,5 @@ export const pimp = () => {
     } else {
         let nextClass = styles.pop()
         if (nextClass) button.classList.add(nextClass)
-        else button.classList.add('unpimp')
     }
 }
