@@ -1,11 +1,10 @@
-let hsl
 export const pick = (e) => {
     if (!e) return
     let hue = e.x
     let lum = e.y
     hue = Math.round(hue / window.innerWidth * 360)
     lum = Math.round(lum / window.innerHeight * 100)
-    hsl = `hsl(${hue}, 50%, ${lum}%)`
+    let hsl = `hsl(${hue}, 50%, ${lum}%)`
 
     tHue.innerHTML = `hue\n${hue}`
     tLum.innerHTML = `${lum}\nluminocity`
@@ -17,12 +16,13 @@ export const pick = (e) => {
     axisY.setAttribute('y2', e.y)
 
     document.body.style.background = hsl
+    return hsl
 }
 
 document.addEventListener('mousemove', pick)
+
 document.addEventListener('click', (e) => {
-    pick(e)
-    navigator.clipboard.writeText(hsl)
+    navigator.clipboard.writeText(pick(e))
 })
 
 
