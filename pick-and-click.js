@@ -21,7 +21,7 @@ export const pick = (e) => {
 
 document.addEventListener('mousemove', pick)
 
-document.addEventListener('click', (e) => {
+document.addEventListener('mousedown', (e) => {
     navigator.clipboard.writeText(pick(e))
 })
 
