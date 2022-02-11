@@ -20,7 +20,10 @@ export const pick = (e) => {
 }
 
 document.addEventListener('mousemove', pick)
-document.addEventListener('click', () => navigator.clipboard.writeText(hsl))
+document.addEventListener('click', (e) => {
+    pick(e)
+    navigator.clipboard.writeText(hsl)
+})
 
 
 let tHsl, tHue, tLum
