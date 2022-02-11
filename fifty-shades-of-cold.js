@@ -25,6 +25,5 @@ export const generateColdShades = () => {
 export const choseShade = (color) => {
     Array.from(document.getElementsByTagName('div')).forEach(div => {
         div.classList = color
-        div.innerHTML = color
     })
 }
