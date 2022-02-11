@@ -20,8 +20,9 @@ export const repair = function () {
     let ids = Array.from(document.body.dataset.repatations.split(','))
     ids.forEach(id => {
         let el = document.getElementById(id)
-        if (el.hasAttribute('foundation')) el.setAttribute('repaired', 'in progress')
-        else el.setAttribute('repaired', 'true')
+        if (el.hasAttribute('data-foundation')) {
+            el.dataset.repaired = 'in progress'
+        } else el.dataset.repaired = 'true'
     })
 }
 
