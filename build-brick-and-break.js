@@ -17,16 +17,16 @@ export const build = function (num) {
 }
 
 export const repair = function () {
-    let ids = Array.from(document.body.dataset.repatations.split(','))
+    let ids = document.body.dataset.reparations.split(',')
     ids.forEach(id => {
         let el = document.getElementById(id)
-        if (el.hasAttribute('data-foundation')) {
+        if (el && el.hasAttribute('data-foundation')) {
             el.dataset.repaired = 'in progress'
-        } else el.dataset.repaired = 'true'
+        } else if (el) el.dataset.repaired = 'true'
     })
 }
 
 export const destroy = function () {
     let lastBlock = Array.from(document.body.getElementsByTagName('div'))[0]
-    lastBlock.remove()
+    if (lastBlock) lastBlock.remove()
 }
