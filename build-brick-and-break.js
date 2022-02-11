@@ -4,7 +4,9 @@ export const build = function (num) {
     const createBlock = () => {
         let block = document.createElement('div')
         block.id = `brick-${id}`
-        if ((id + 1) % 3 === 0) block.setAttribute('foundation', '')
+        if ((id + 1) % 3 === 0) {
+            block.dataset.foundation = 'true'
+        }
         document.body.append(block)
         if (id === num) clearInterval(interval)
         id++
@@ -15,7 +17,7 @@ export const build = function (num) {
 }
 
 export const repair = function () {
-    let ids = Array.from(document.body.getAttribute('data-reparations').split(','))
+    let ids = Array.from(document.body.dataset.repatations.split(','))
     ids.forEach(id => {
         let el = document.getElementById(id)
         if (el.hasAttribute('foundation')) el.setAttribute('repaired', 'in progress')
