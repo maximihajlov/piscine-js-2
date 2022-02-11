@@ -1,10 +1,17 @@
 export const build = function (num) {
-    let block = document.createElement('div')
-    block.id = `brick-${num}`
-    if ((num + 1) % 3 === 0) block.setAttribute('foundation', 'true')
-    document.body.append(block)
+    let id = 1
 
-    if (num > 1) setTimeout(build, 100, num - 1)
+    const createBlock = () => {
+        let block = document.createElement('div')
+        block.id = `brick-${id}`
+        if ((id + 1) % 3 === 0) block.setAttribute('foundation', 'true')
+        document.body.append(block)
+        if (id === num) clearInterval(interval)
+        id++
+    }
+
+    let interval = setInterval(createBlock, 100)
+
 }
 
 export const repair = function () {
