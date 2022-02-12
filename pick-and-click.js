@@ -56,4 +56,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
     svg.append(axisX, axisY)
 
     document.body.append(tHsl, tHue, tLum, svg)
+
+    // puppeteer clipboard bug bypass
+    let clipboardText = null;
+    window.navigator.clipboard.readText = () => new Promise(resolve => resolve(clipboardText))
+    window.navigator.clipboard.writeText = (text) => new Promise(() => clipboardText = text)
+
 });
