@@ -1,6 +1,6 @@
 function filterShortStateName(arr) {
-    return arr.filter(el => {
-        return el.name.length < 7
+    return arr.filter(str => {
+        return str.length < 7
     })
 }
 
