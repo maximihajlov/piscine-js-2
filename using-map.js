@@ -18,19 +18,10 @@ function fahrenheitToCelsius(arr) {
 
 function tempForecasts(arr) {
     return arr.map(el => {
-        let temp = `${Math.round((Number(el['temperature'].slice(0, -2)) - 32) * (5 / 9))}°Celsius`
+        let temp = `${Math.floor((Number(el['temperature'].slice(0, -2)) - 32) * (5 / 9))}°Celsius`
         let state = el['state'].split(' ').map(word => {
             return word.charAt(0).toUpperCase() + word.slice(1)
         }).join(' ')
         return `${temp} in ${el.city}, ${state}`
     })
 }
-
-console.log(tempForecasts([
-    {
-        city: 'Pasadena',
-        temperature: ' 101 °F',
-        state: 'california',
-        region: 'West',
-    },
-]))
