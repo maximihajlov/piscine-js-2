@@ -18,7 +18,7 @@ function fahrenheitToCelsius(arr) {
 
 function trimTemp(arr) {
     return arr.map(el => {
-        el['temperature'] = el['temperature'].trim()
+        el['temperature'] = el['temperature'].split(' ').join('')
         return el
     })
 }
