@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     axisX = document.createElementNS("http://www.w3.org/2000/svg", 'line')
     axisY = document.createElementNS("http://www.w3.org/2000/svg", 'line')
     axisX.id = 'axisX'
-    axisX.id = 'axisY'
+    axisY.id = 'axisY'
 
     axisX.setAttribute('y1', '-10000')
     axisX.setAttribute('y2', '10000')

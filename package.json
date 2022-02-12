@@ -1,0 +1,7 @@
+{
+  "name": "piscine-js-2",
+  "version": "1.0.0",
+  "devDependencies": {
+    "puppeteer": "^13.3.1"
+  }
+}
