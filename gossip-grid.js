@@ -13,12 +13,21 @@ export const grid = () => {
     background.classList.add('range')
 
     width.id = 'width'
-    fontsize.id = 'fontsize'
+    fontsize.id = 'fontSize'
     background.id = 'background'
 
     width.type = 'range'
     fontsize.type = 'range'
     background.type = 'range'
+
+    width.min = '200'
+    width.max = '800'
+
+    fontsize.min = '20'
+    fontsize.max = '40'
+
+    background.min = '20'
+    background.max = '75'
 
     let ranges = document.createElement('div')
     ranges.classList.add('ranges')
@@ -51,12 +60,20 @@ export const grid = () => {
         document.body.append(div)
     })
 
-    width.addEventListener('change',(e)=>{
-        console.log(e2)
-        // Array.from(document.getElementsByClassName('gossip')).forEach(el => {
-        //     el.style.width =
-        // })
+    width.addEventListener('input', (e) => {
+        Array.from(document.getElementsByClassName('gossip')).forEach(el => {
+            el.style.width = `${e.target.value}px`
+        })
     })
-
+    fontsize.addEventListener('input', (e) => {
+        Array.from(document.getElementsByClassName('gossip')).forEach(el => {
+            el.style.fontSize = `${e.target.value}px`
+        })
+    })
+    background.addEventListener('input', (e) => {
+        Array.from(document.getElementsByClassName('gossip')).forEach(el => {
+            el.style.background = `hsl(280, 50%, ${e.target.value}%)`
+        })
+    })
 }
 

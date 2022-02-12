@@ -29,6 +29,7 @@ export const moveCircle = (e) => {
         if (isBoxed) {
             if (y < box.top) y = box.top
             else if (y > box.bottom) y = box.bottom
+
             if (x < box.left) x = box.left
             else if (x > box.right) x = box.right
         }
