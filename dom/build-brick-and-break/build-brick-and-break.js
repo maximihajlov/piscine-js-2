@@ -16,7 +16,7 @@ export const build = function (num) {
 
 }
 
-export const repair = function () {
+export const repair = function (...e) {
     let ids = document.body.dataset.reparations.split(',')
     ids.forEach(id => {
         let el = document.getElementById(id)

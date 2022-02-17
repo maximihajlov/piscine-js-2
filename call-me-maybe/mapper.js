@@ -17,3 +17,15 @@ function flatMap(arr, func) {
     }
     return results
 }
+
+
+let arr1 = [1, 2, 3, 4];
+
+let add2mult3 = (x) => {
+    return [x + 2, [x * 3, x / 3]]
+}
+
+console.log(map(arr1, add2mult3))
+
+console.log(flatMap(arr1, add2mult3))
+
