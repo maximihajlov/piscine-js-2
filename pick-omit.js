@@ -1,5 +1,6 @@
 function pick(obj, str) {
     if (typeof str === 'string') str = [str]
+
     const res = {}
     str.forEach(key => {
         if (obj[key] !== undefined) res[key] = obj[key]

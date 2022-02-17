@@ -1,5 +1,5 @@
 function invert(obj) {
-    let res = {}
+    const res = {}
     Object.keys(obj).forEach((key) => {
         res[obj[key]] = key
     })
