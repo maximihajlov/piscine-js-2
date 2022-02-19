@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     document.body.append(tHsl, tHue, tLum, svg)
 
     // puppeteer clipboard bug bypass
-    let clipboardText = null;
-    window.navigator.clipboard.readText = () => new Promise(resolve => resolve(clipboardText))
-    window.navigator.clipboard.writeText = (text) => new Promise(() => clipboardText = text)
+    // let clipboardText = null;
+    // window.navigator.clipboard.readText = () => new Promise(resolve => resolve(clipboardText))
+    // window.navigator.clipboard.writeText = (text) => new Promise(() => clipboardText = text)
 
 });
