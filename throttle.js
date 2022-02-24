@@ -25,7 +25,7 @@ function throttle(func, wait) {
 
 }
 
-function opThrottle(func, wait, options = {leading: true, trailing: true}) {
+function opThrottle(func, wait, options) {
     let timer, savedArgs, savedThis
 
     return function () {
@@ -36,7 +36,7 @@ function opThrottle(func, wait, options = {leading: true, trailing: true}) {
         }
 
         const timeup = () => {
-            if (options.trailing === true && savedArgs) {
+            if (options?.trailing === true && savedArgs) {
                 func.apply(savedThis, savedArgs)
                 savedThis = savedArgs = null
                 timer = setTimeout(timeup, wait)
@@ -45,7 +45,7 @@ function opThrottle(func, wait, options = {leading: true, trailing: true}) {
             }
         }
 
-        if (options.leading === true) {
+        if (options?.leading === true) {
             func.apply(this, arguments)
         } else {
             savedThis = this
